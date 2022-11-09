@@ -1,0 +1,25 @@
+﻿<Application x:Class="Winston.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Winston"
+             xmlns:ViewModel="clr-namespace:Winston.MVVM.ViewModel"
+             xmlns:View="clr-namespace:Winston.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuBtnTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+                <View:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModel:FeaturedViewModel}">
+                <View:FeaturedView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
